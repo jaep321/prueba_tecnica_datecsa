@@ -5,14 +5,22 @@ Repositorio para el desarrollo de las respuestas a la prueba técnica para el pu
 ## Estructura del Proyecto
 
 ```
-├── docs/               # Documentación adicional
-├── src/                # Código fuente
-│   ├── data/           # Datos del cuestionario
-│   ├── models/         # Modelos de datos
-│   ├── services/       # Lógica de negocio
-│   └── utils/          # Utilidades
-├── tests/              # Pruebas unitarias
-└── README.md           # Este archivo
+prueba tecnica datecsa/
+├── soluciones/
+│   └── 1_analisis_datos/
+│       └── 1.1_limpieza_datos/
+│           ├── solucion.py
+│           ├── README.md
+│           └── datos/
+│               ├── datos_limpios.csv
+│               └── datos_ventas.csv
+├── src/
+│   ├── __init__.py
+│   └── main.py
+├── .gitignore
+├── Prueba Tecnica Consultor Lider Analítica_2025.docx
+├── README.md
+└── requirements.txt
 ```
 
 ## Requisitos
