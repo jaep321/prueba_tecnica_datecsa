@@ -39,17 +39,17 @@ Este directorio contiene la solución al ejercicio de limpieza y preparación de
 ```
 
 ### Proceso de limpieza:
-1. **Conversión de fechas**: Se estandarizaron todos los formatos de fecha
-2. **Valores nulos**: Se encontraron 3 valores nulos en 'Monto_compra'. Estos registros fueron eliminados
+1. **Conversión de fechas**: Se estandarizaron todos los formatos de fecha a `YYYY-MM-DD`
+2. **Valores nulos**: Se encontraron y eliminaron 3 valores nulos en 'Monto_compra'
 3. **Datos duplicados**: No se encontraron registros duplicados
 
 ### Datos después de la limpieza (primeros 5 registros):
 ```
    ID_cliente     Nombre Fecha_de_compra  Monto_compra Producto
 0           1  Cliente 1      2023-01-15        114.90        A
-1           2  Cliente 2             NaT         95.85        B
-2           3  Cliente 3             NaT        119.43        A
-3           4  Cliente 4             NaT        145.69        C
+1           2  Cliente 2      2023-02-20         95.85        B
+2           3  Cliente 3      2023-03-15        119.43        A
+3           4  Cliente 4      2023-04-30        145.69        C
 4           5  Cliente 5      2023-05-10         92.98        B
 ```
 
@@ -58,7 +58,7 @@ Este directorio contiene la solución al ejercicio de limpieza y preparación de
 - **Valores nulos por columna**:
   - ID_cliente: 0
   - Nombre: 0
-  - Fecha_de_compra: 7 (algunas fechas no pudieron ser convertidas)
+  - Fecha_de_compra: 0 (todas las fechas convertidas correctamente)
   - Monto_compra: 0
   - Producto: 0
 
@@ -78,4 +78,5 @@ max      147.380000
 - Se procesaron exitosamente 17 registros después de la limpieza
 - Los montos de compra tienen una media de aproximadamente 99.42 con una desviación estándar de 28.14
 - El valor mínimo de compra fue 42.60 y el máximo 147.38
-- Algunas fechas (7 registros) no pudieron ser convertidas al formato estándar y se marcaron como NaT (Not a Time)
+- Todas las fechas se convirtieron correctamente al formato estándar YYYY-MM-DD
+- Se eliminaron los 3 registros con valores nulos en 'Monto_compra' para garantizar la integridad de los datos

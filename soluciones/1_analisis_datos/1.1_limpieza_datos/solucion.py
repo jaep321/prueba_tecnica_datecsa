@@ -55,21 +55,26 @@ def limpiar_datos(df: pd.DataFrame) -> pd.DataFrame:
         print(f"Se encontraron {duplicados} registros duplicados. Eliminando...")
         df_limpio = df_limpio.drop_duplicates()
     
-    # 2. Corregir formato de fechas
+    # 2. Corregir formato de fechas por fila
     if 'Fecha_de_compra' in df_limpio.columns:
         print("\nConvirtiendo formato de fechas...")
-        # Intentar diferentes formatos de fecha
-        formatos_fecha = ['%Y-%m-%d', '%d/%m/%Y', '%m/%d/%Y', '%Y/%m/%d', '%d-%m-%Y', '%m-%d-%Y']
         
-        for formato in formatos_fecha:
-            try:
-                df_limpio['Fecha_de_compra'] = pd.to_datetime(
-                    df_limpio['Fecha_de_compra'], format=formato, errors='coerce'
-                )
-                # Si llegamos aquí sin error, salir del bucle
-                break
-            except:
-                continue
+        formatos_fecha = [
+            '%Y-%m-%d', '%d/%m/%Y', '%m/%d/%Y', 
+            '%Y/%m/%d', '%d-%m-%Y', '%m-%d-%Y'
+        ]
+        
+        def convertir_fecha(valor):
+            if pd.isna(valor):
+                return pd.NaT
+            for fmt in formatos_fecha:
+                try:
+                    return datetime.strptime(str(valor), fmt)
+                except:
+                    continue
+            return pd.NaT  # Si ninguno funciona
+        
+        df_limpio['Fecha_de_compra'] = df_limpio['Fecha_de_compra'].apply(convertir_fecha)
     
     # 3. Manejar valores nulos en Monto_compra
     if 'Monto_compra' in df_limpio.columns:
