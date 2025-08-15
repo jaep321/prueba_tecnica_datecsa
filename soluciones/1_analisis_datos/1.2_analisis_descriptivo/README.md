@@ -49,6 +49,9 @@ El análisis muestra:
 - Mes con menores ventas: **Febrero (150)**.
 - Tendencia general de incremento de ventas a lo largo del año.
 - Variabilidad moderada en ventas mensuales (desviación estándar de 27.78).
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> c7329c6a33b1627dba1ab5001f705e1173041a2f
