@@ -44,9 +44,16 @@ Este directorio contiene el análisis descriptivo de los datos limpios generados
 
 ### 2. Visualizaciones
 - **Histograma de montos de compra**: Muestra la distribución de los montos de compra
+  ![Histograma de Montos](graficos/histograma_montos.png)
+
 - **Boxplot por producto**: Compara la distribución de montos entre diferentes productos
+  ![Boxplot por Producto](graficos/boxplot_productos.png)
+
 - **Serie temporal**: Muestra la evolución de las compras a lo largo del tiempo
+  ![Serie Temporal](graficos/serie_temporal.png)
+
 - **Mapa de calor de correlaciones**: Muestra las correlaciones entre variables numéricas
+  ![Mapa de Calor](graficos/correlaciones.png)
 
 ### 3. Análisis de Correlaciones
 - Matriz de correlación entre variables numéricas
