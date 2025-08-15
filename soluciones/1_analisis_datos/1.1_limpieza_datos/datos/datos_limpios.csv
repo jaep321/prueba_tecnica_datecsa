@@ -1,0 +1,18 @@
+ID_cliente,Nombre,Fecha_de_compra,Monto_compra,Producto
+1,Cliente 1,2023-01-15,114.9,A
+2,Cliente 2,,95.85,B
+3,Cliente 3,,119.43,A
+4,Cliente 4,,145.69,C
+5,Cliente 5,2023-05-10,92.98,B
+6,Cliente 6,2023-06-25,92.98,A
+7,Cliente 7,,147.38,C
+8,Cliente 8,2023-08-20,123.02,B
+9,Cliente 9,2023-09-05,85.92,A
+10,Cliente 10,2023-10-12,116.28,C
+1,Cliente 1,2023-01-15,86.1,A
+3,Cliente 3,,107.26,A
+4,Cliente 4,,42.6,C
+6,Cliente 6,2023-06-25,83.13,A
+7,Cliente 7,,69.62,C
+8,Cliente 8,2023-08-20,109.43,B
+10,Cliente 10,2023-10-12,57.63,C
