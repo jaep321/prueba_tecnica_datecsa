@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
 from sklearn.model_selection import train_test_split
+from tabulate import tabulate
 
 def generar_datos_ejemplo():
     """Genera datos de ejemplo de horas de estudio vs calificaciones."""
@@ -50,6 +51,22 @@ def visualizar_regresion(X, y, modelo, r2):
     plt.savefig('regresion_lineal.png')
     plt.close()
 
+def mostrar_tabla_predicciones(modelo, max_horas=10):
+    """Muestra una tabla con las predicciones para las primeras horas de estudio."""
+    # Crear lista de horas de 1 a max_horas
+    horas = list(range(1, max_horas + 1))
+    # Predecir calificaciones para cada hora
+    predicciones = [predecir_calificacion(modelo, h) for h in horas]
+    
+    # Crear tabla
+    tabla = []
+    for h, p in zip(horas, predicciones):
+        tabla.append([f"{h} hora{'s' if h > 1 else ''}", f"{p:.2f}"])
+    
+    # Mostrar tabla
+    print("\nPredicciones para las primeras horas de estudio:")
+    print(tabulate(tabla, headers=["Horas de Estudio", "Calificación Predicha"], tablefmt="grid"))
+
 def main():
     # Generar y preparar datos
     X, y = generar_datos_ejemplo()
@@ -57,16 +74,19 @@ def main():
     # Entrenar modelo
     modelo, r2, X_entrenamiento, y_entrenamiento, X_prueba, y_prueba = entrenar_modelo_regresion(X, y)
     
-    # Realizar predicción para 5 horas de estudio
-    horas_ejemplo = 5
-    prediccion = predecir_calificacion(modelo, horas_ejemplo)
-    
     # Mostrar resultados
     print(f"\nResultados del Modelo de Regresión Lineal")
     print("-" * 40)
     print(f"Coeficiente (pendiente): {modelo.coef_[0]:.2f}")
     print(f"Intercepto: {modelo.intercept_:.2f}")
     print(f"R² Score: {r2:.4f}")
+    
+    # Mostrar tabla de predicciones
+    mostrar_tabla_predicciones(modelo)
+    
+    # Realizar predicción para 5 horas de estudio
+    horas_ejemplo = 5
+    prediccion = predecir_calificacion(modelo, horas_ejemplo)
     print(f"\nPredicción para {horas_ejemplo} horas de estudio: {prediccion:.2f}")
     
     # Visualización
