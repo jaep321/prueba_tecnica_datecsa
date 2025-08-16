@@ -60,26 +60,11 @@
    - Texto alternativo para imágenes
    - Opción de modo oscuro
 
-### Captura de Pantalla (Ejemplo Conceptual)
+### Captura de Pantalla del Dashboard
 
-```
-+-----------------------------------------------------+
-|  DASHBOARD DE VENTAS - RETAIL X         [Período ▼] |
-|  [Filtros: Región ▼ | Categoría ▼ | Año ▼]          |
-+---------------------+-------------------------------+
-|  Ventas Totales    |  Margen Promedio |  Crecimiento |
-|  $1,250,000        |  32.5%          |  +12.4%      |
-+---------------------+-------------------------------+
-|  [Mapa de Calor por Región]  |  [Ventas x Categoría] |
-|                               |  [Gráfico de Barras]  |
-+-------------------------------+-----------------------+
-|  [Comparativo Ventas Año Actual vs. Anterior]        |
-|  [Gráfico de Líneas con Anotaciones]                 |
-+-----------------------------------------------------+
-|  [Tabla de Productos con Mayores Márgenes]           |
-|  [Paginación | Búsqueda | Exportar a Excel]          |
-+-----------------------------------------------------+
-```
+![Dashboard de Análisis de Datos](Dashboard.png)
+
+*Figura: Dashboard interactivo mostrando las métricas clave y visualizaciones del análisis de marketing bancario.*
 
 ### Herramientas Recomendadas
 
