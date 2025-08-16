@@ -22,14 +22,6 @@ pd.set_option('display.max_columns', None)
 
 
 def cargar_datos(ruta_archivo: str) -> pd.DataFrame:
-    """Carga el dataset desde un archivo CSV.
-    
-    Args:
-        ruta_archivo: Ruta al archivo CSV con los datos
-        
-    Returns:
-        DataFrame de pandas con los datos cargados
-    """
     try:
         return pd.read_csv(ruta_archivo, encoding='utf-8')
     except Exception as e:
@@ -38,14 +30,6 @@ def cargar_datos(ruta_archivo: str) -> pd.DataFrame:
 
 
 def limpiar_datos(df: pd.DataFrame) -> pd.DataFrame:
-    """Realiza la limpieza del DataFrame.
-    
-    Args:
-        df: DataFrame con los datos a limpiar
-        
-    Returns:
-        DataFrame con los datos limpios
-    """
     # Hacer una copia para no modificar el original
     df_limpio = df.copy()
     
@@ -87,11 +71,6 @@ def limpiar_datos(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def validar_datos(df: pd.DataFrame) -> None:
-    """Realiza validaciones sobre los datos limpios.
-    
-    Args:
-        df: DataFrame con los datos a validar
-    """
     print("\n" + "="*50)
     print("VALIDACIÓN DE DATOS")
     print("="*50)
@@ -144,7 +123,6 @@ def generar_datos_ejemplo() -> pd.DataFrame:
 
 
 def main():
-    """Función principal."""
     # Crear directorio de datos si no existe
     directorio_datos = Path('datos')
     directorio_datos.mkdir(exist_ok=True)

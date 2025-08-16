@@ -7,7 +7,6 @@ from sklearn.model_selection import train_test_split
 from tabulate import tabulate
 
 def generar_datos_ejemplo():
-    """Genera datos de ejemplo de horas de estudio vs calificaciones."""
     np.random.seed(42)
     horas_estudio = np.random.uniform(1, 10, 100)
     ruido = np.random.normal(0, 5, 100)
@@ -15,7 +14,6 @@ def generar_datos_ejemplo():
     return horas_estudio.reshape(-1, 1), calificaciones
 
 def entrenar_modelo_regresion(X, y):
-    """Entrena un modelo de regresión lineal."""
     X_entrenamiento, X_prueba, y_entrenamiento, y_prueba = train_test_split(
         X, y, test_size=0.2, random_state=42
     )
@@ -30,11 +28,9 @@ def entrenar_modelo_regresion(X, y):
     return modelo, r2, X_entrenamiento, y_entrenamiento, X_prueba, y_prueba
 
 def predecir_calificacion(modelo, horas_estudio):
-    """Predice la calificación para un número dado de horas de estudio."""
     return modelo.predict([[horas_estudio]])[0]
 
 def visualizar_regresion(X, y, modelo, r2):
-    """Visualiza los datos y la línea de regresión."""
     plt.figure(figsize=(10, 6))
     plt.scatter(X, y, color='blue', label='Datos reales')
     
@@ -52,8 +48,6 @@ def visualizar_regresion(X, y, modelo, r2):
     plt.close()
 
 def mostrar_tabla_predicciones(modelo, max_horas=10):
-    """Muestra una tabla con las predicciones para las primeras horas de estudio."""
-    # Crear lista de horas de 1 a max_horas
     horas = list(range(1, max_horas + 1))
     # Predecir calificaciones para cada hora
     predicciones = [predecir_calificacion(modelo, h) for h in horas]

@@ -26,7 +26,6 @@ sns.set_palette('pastel')
 
 
 def analizar_ventas_mensuales():
-    """Analiza las ventas mensuales según el ejercicio propuesto."""
     print("\n" + "="*50)
     print("ANÁLISIS DE VENTAS MENSUALES")
     print("="*50)
