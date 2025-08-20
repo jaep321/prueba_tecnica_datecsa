@@ -2,6 +2,9 @@
 
 Repositorio que contiene el análisis completo de datos de marketing bancario para predecir la suscripción a depósitos a plazo fijo, desarrollado como parte del proceso de selección para el puesto de Consultor Líder Analítica.
 
+## 🎯 Objetivo
+Desarrollar un modelo predictivo que identifique a los clientes con mayor probabilidad de suscribir un depósito a plazo fijo, optimizando así las estrategias de marketing del banco.
+
 ## 📊 Presentaciones
 
 ### 1. Modelado Predictivo
@@ -9,6 +12,22 @@ Repositorio que contiene el análisis completo de datos de marketing bancario pa
 
 ### 2. Estrategia Comercial
 [![Ver presentación](https://img.shields.io/badge/Ver-Estrategia-0078D4?style=for-the-badge&logo=adobe-acrobat-reader&logoColor=white)](2.%20Estrategia%20Comercial%20para%20Maximizar%20Conversión%20y%20Minimizar%20Costos.pdf)
+
+## 🔍 Hallazgos Clave
+
+### 📈 Rendimiento del Modelo
+- **Precisión (Sí)**: 85%
+- **Recall (Sí)**: 63%
+- **F1-Score (Sí)**: 0.72
+- **Exactitud (Accuracy)**: 94%
+- **ROC-AUC**: 0.92
+
+### 🎯 Características Principales
+1. Duración de la llamada (29.93%)
+2. Día del mes (7.71%)
+3. Tipo de contacto (7.32%)
+4. Balance en cuenta (5.21%)
+5. Crédito hipotecario (4.27%)
 
 ## 🏗️ Estructura del Proyecto
 
@@ -27,6 +46,9 @@ prueba tecnica datecsa/
 │   ├── 3_estrategia_liderazgo_analitica/  # Estrategia de implementación
 │   ├── 4_visualizacion_datos/      # Dashboards y visualizaciones
 │   └── 5_analisis_bancario/        # Análisis integral del caso bancario
+│       ├── analisis_bancario.ipynb # Notebook con el análisis completo
+│       ├── graficas/               # Visualizaciones generadas
+│       └── catboost_info/          # Información del modelo CatBoost
 │
 ├── src/                            # Código fuente principal
 │   ├── __init__.py
@@ -34,8 +56,8 @@ prueba tecnica datecsa/
 │
 ├── .gitignore
 ├── bank-full.csv                   # Dataset principal
-├── Prueba Tecnica Consultor Lider Analítica_2025.docx
-└── requirements.txt
+├── requirements.txt               # Dependencias del proyecto
+└── README.md
 ```
 
 ## 🚀 Requisitos
@@ -55,37 +77,33 @@ prueba tecnica datecsa/
 2. **Crear y activar entorno virtual**
    ```bash
    python -m venv venv
-   # Windows
-   .\venv\Scripts\activate
-   # Linux/Mac
-   source venv/bin/activate
+   source venv/bin/activate  # En Windows: venv\Scripts\activate
    ```
 
 3. **Instalar dependencias**
    ```bash
    pip install -r requirements.txt
-   # Para desarrollo con modelos
-   pip install -r soluciones/2_modelos_predictivos/requirements.txt
    ```
 
-## 📚 Documentación
+4. **Ejecutar el análisis**
+   ```bash
+   jupyter notebook soluciones/5_analisis_bancario/analisis_bancario.ipynb
+   ```
 
-Cada directorio en `soluciones/` contiene su propio README.md con documentación detallada:
+## 📊 Visualizaciones
 
-1. [Análisis de Datos](soluciones/1_analisis_datos/README.md)
-2. [Modelos Predictivos](soluciones/2_modelos_predictivos/README.md)
-3. [Estrategia de Liderazgo](soluciones/3_estrategia_liderazgo_analitica/README.md)
-4. [Visualización de Datos](soluciones/4_visualizacion_datos/README.md)
-5. [Análisis Integral](soluciones/5_analisis_bancario/README.md)
-
-## 📊 Vista Previa del Dashboard
-
-![Dashboard de Análisis](soluciones/4_visualizacion_datos/Dashboard.png)
-
-*Figura: Dashboard interactivo mostrando métricas clave del análisis de marketing bancario.*
+El análisis incluye visualizaciones detalladas que muestran:
+- Matriz de confusión
+- Curva ROC y Precision-Recall
+- Importancia de variables
+- Curvas de aprendizaje y validación
 
 ## 📝 Notas Adicionales
 
-- Los archivos PDF contienen presentaciones detalladas del análisis y estrategias.
-- El dataset principal se encuentra en `bank-full.csv`.
-- Se recomienda revisar los notebooks en orden numérico para seguir el flujo de análisis.
+- Los datos originales se encuentran en `bank-full.csv`
+- El análisis detallado está en `soluciones/5_analisis_bancario/`
+- Para replicar el entorno exacto, instalar las dependencias del `requirements.txt`
+
+## 📧 Contacto
+
+Para más información, por favor contactar a joralb93@gmail.com.
